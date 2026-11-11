@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Superbrain challenge</title>
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0d0d0f;color:#f2f1ee;font:17px -apple-system,system-ui,sans-serif;text-align:center}
+main{max-width:340px;padding:32px}
+h1{font-size:34px;line-height:1.1;margin:0 0 12px}
+p{color:#8a8a93;margin:0 0 28px}
+a.b{display:block;background:#d7ff3f;color:#0d0d0f;font-weight:800;padding:18px;border-radius:18px;text-decoration:none}
+small{display:block;margin-top:22px;color:#8a8a93}
+</style></head><body><main>
+<h1 id="t">Someone sent you a Superbrain challenge.</h1>
+<p id="s">Short brain games. Beat their time.</p>
+<a class="b" id="open" href="superbrain://play">Open in Superbrain</a>
+<small>Don't have it yet? Superbrain is in TestFlight.</small>
+</main>
+<script>
+var q=new URLSearchParams(location.search), code=q.get("c")||location.hash.replace(/^#\/?c\//,"").replace(/^#/,"");
+var a=document.getElementById("open");
+if(code){a.href="superbrain://c/"+encodeURIComponent(code);setTimeout(function(){location.href=a.href},350)}
+else{document.getElementById("t").textContent="Superbrain";document.getElementById("s").textContent="Positive scrolling: brain games instead of brain rot."}
+</script></body></html>
